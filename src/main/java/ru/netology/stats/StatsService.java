@@ -54,8 +54,10 @@ public class StatsService {
     //5
     public int monthsBelowMedium(long[] sales) {
         int monthsBelow = 0;
+        long Medium = salesMedium(sales);
+
         for (long sale : sales) {
-            if (sale < salesMedium(sales)) {
+            if (sale < Medium) {
                 monthsBelow++;
             }
         }
@@ -65,8 +67,9 @@ public class StatsService {
     //6
     public int monthsAboveMedium(long[] sales) {
         int monthsAbove = 0;
+        long Medium = salesMedium(sales);
         for (long sale : sales) {
-            if (sale < salesMedium(sales)) {
+            if (sale > Medium) {
                 monthsAbove++;
             }
         }
